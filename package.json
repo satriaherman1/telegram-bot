@@ -1,0 +1,22 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cli-js": "0.0.8",
+    "dotenv": "^8.2.0",
+    "node-cmd": "^3.0.0",
+    "node-fetch": "^2.6.0",
+    "shelljs": "^0.8.4",
+    "telegraf": "^3.37.0"
+  }
+}
