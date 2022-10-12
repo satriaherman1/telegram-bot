@@ -1,4 +1,8 @@
 const axios = require("axios");
+const simsimi = require("simsimi")({
+  key: process.env.SIMSIMI_TOKEN,
+  lang: "id",
+});
 require("dotenv").config();
 
 class Command {
@@ -28,6 +32,12 @@ Sabtu, 08:30 - 10:00 = Aplikasi Komputer Bisnis
   async jokeImage() {
     const jokes = await axios.get(`${process.env.JOKE_API}/api/image/random`);
     return jokes.data.data.url;
+  }
+
+  async simsimiChat(text) {
+    const chat = await simsimi(text);
+    console.log(chat);
+    return chat;
   }
 }
 
