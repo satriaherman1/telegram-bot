@@ -55,8 +55,8 @@ bot.command("/jadwal", async (ctx) => {
 });
 
 // recheived message
-bot.on("text", (ctx) => {
-  ctx.reply(command.simsimiChat(ctx.update.message.text));
+bot.on("text", async (ctx) => {
+  ctx.reply(await command.simsimiChat(ctx.update.message.text));
 });
 bot.on(["photo", "video"], (context) => context.replyWithPhoto("data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="));
 bot.on("sticker", (ctx) => ctx.replyWithPhoto("https://i.pinimg.com/originals/a0/1c/46/a01c46ba0109b58d5335548f8d44c718.jpg"));
