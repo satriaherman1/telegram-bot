@@ -61,17 +61,5 @@ bot.on("text", async (ctx) => {
 bot.on(["photo", "video"], (context) => context.replyWithPhoto("data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="));
 bot.on("sticker", (ctx) => ctx.replyWithPhoto("https://i.pinimg.com/originals/a0/1c/46/a01c46ba0109b58d5335548f8d44c718.jpg"));
 
-// samarkan identitas si pengirim pesan
-function hashedId(msg) {
-  // dapatkan tanggal pesan agar tidak perlu berurusan dengan locale
-  var d = new Date(msg.date);
-  // kalikan tahun dengan bulan dan tanggal
-  var rnd = d.getFullYear() * d.getMonth() * d.getDate();
-  // kurangi user_id oleh hasil perkalian di atas
-  var userId = msg.from.id - rnd;
-  // hash hasil pengurangan di atas untuk menyamarkan identitas pengirim pesan
-  return hash(userId.toString());
-}
-
 bot.launch();
 // https://api.telegram.org/bot1112940978:AAGRv0LcgnmWzVRyVrxxHtIRE4-QU3OjyF0/getUpdates
